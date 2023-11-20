@@ -42,5 +42,8 @@ class MainActivity : AppCompatActivity() {
              startActivity(intent)
 
          }
+        binding.updateTextButton.setOnClickListener {
+            binding.name.text = "new text value"
+        }
     }
 }
