@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_nav_graph.xml"
+    app:startDestination="@id/firstPageFragment">
+
+    <fragment
+        android:id="@+id/firstPageFragment"
+        android:name="com.hellow.kenventitassignment.ui.navComponent.fragment.FirstPageFragment"
+        android:label="fragment_first_page"
+        tools:layout="@layout/fragment_first_page" >
+        <action
+            android:id="@+id/action_firstPageFragment_to_secondScreenFragment"
+            app:destination="@id/secondScreenFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/secondScreenFragment"
+        android:name="com.hellow.kenventitassignment.ui.navComponent.fragment.SecondScreenFragment"
+        android:label="fragment_second_screen"
+        tools:layout="@layout/fragment_second_screen">
+        <action
+            app:popUpToInclusive="false"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/firstPageFragment"
+            app:destination="@id/firstPageFragment"
+            android:id="@+id/action_secondScreenFragment_to_firstPageFragment_add_stack"
+             />
+
+    </fragment>
+</navigation>
